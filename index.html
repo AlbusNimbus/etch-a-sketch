@@ -7,26 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <title>Document</title>
+    <title>Etchersetcher</title>
 </head>
 
 <body>
-    <div class="header">Etchefetch</div>
+    <div class="header">it's pronounced gif</div>
     <div class="sketcher">
-        <div class="menu">
 
-            <div class="button" id="draw-button">
-                <svg id="search-icon" class="search-icon" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                <path d="M0 0h24v24H0z" fill="none"/>
-            </svg>
+        <div class="menu">
+            <div class="menu-buttons">
+                <div class="button" id="draw-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                        <path
+                            d="M5 19H6.4L16.45 8.975L15.75 8.25L15.025 7.55L5 17.6ZM3 21V16.75L16.45 3.325Q17.025 2.75 17.863 2.75Q18.7 2.75 19.275 3.325L20.675 4.75Q21.25 5.325 21.25 6.15Q21.25 6.975 20.675 7.55L7.25 21ZM19.25 6.15 17.85 4.75ZM16.45 8.975 15.75 8.25 15.025 7.55 16.45 8.975Z" />
+                    </svg>
+                </div>
+                <div class="button" id="erase-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                        <path
+                            d="M19.8 22.6 12.725 15.525 7.25 21H3V16.75L8.475 11.275L1.4 4.2L2.825 2.775L21.225 21.175ZM15.575 12.675 14.15 11.25 16.45 8.975 15.025 7.55 12.75 9.85 11.325 8.425 16.45 3.325Q17.025 2.75 17.863 2.75Q18.7 2.75 19.275 3.325L20.675 4.75Q21.25 5.325 21.25 6.15Q21.25 6.975 20.675 7.55ZM5 19H6.4L11.3 14.1L10.6 13.4L9.9 12.7L5 17.6ZM19.25 6.15 17.85 4.75ZM16.45 8.975 15.025 7.55 16.45 8.975ZM11.3 14.1 10.6 13.4 9.9 12.7 11.3 14.1Z" />
+                    </svg>
+                </div>
+                <div class="button" id="delete-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                        <path
+                            d="M7 21Q6.175 21 5.588 20.413Q5 19.825 5 19V6H4V4H9V3H15V4H20V6H19V19Q19 19.825 18.413 20.413Q17.825 21 17 21ZM17 6H7V19Q7 19 7 19Q7 19 7 19H17Q17 19 17 19Q17 19 17 19ZM9 17H11V8H9ZM13 17H15V8H13ZM7 6V19Q7 19 7 19Q7 19 7 19Q7 19 7 19Q7 19 7 19Z" />
+                    </svg></div>
+                <div class="button" id="save-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                        <path
+                            d="M21 7V19Q21 19.825 20.413 20.413Q19.825 21 19 21H5Q4.175 21 3.587 20.413Q3 19.825 3 19V5Q3 4.175 3.587 3.587Q4.175 3 5 3H17ZM19 7.85 16.15 5H5Q5 5 5 5Q5 5 5 5V19Q5 19 5 19Q5 19 5 19H19Q19 19 19 19Q19 19 19 19ZM12 18Q13.25 18 14.125 17.125Q15 16.25 15 15Q15 13.75 14.125 12.875Q13.25 12 12 12Q10.75 12 9.875 12.875Q9 13.75 9 15Q9 16.25 9.875 17.125Q10.75 18 12 18ZM6 10H15V6H6ZM5 7.85V19Q5 19 5 19Q5 19 5 19Q5 19 5 19Q5 19 5 19V5Q5 5 5 5Q5 5 5 5Z" />
+                    </svg></div>
+                <div class="button" id="snap-button"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                        <path
+                            d="M19 8V6H17V4H19V2H21V4H23V6H21V8ZM3 22Q2.175 22 1.588 21.413Q1 20.825 1 20V8Q1 7.175 1.588 6.588Q2.175 6 3 6H6.15L8 4H14V6H8.875L7.05 8H3Q3 8 3 8Q3 8 3 8V20Q3 20 3 20Q3 20 3 20H19Q19 20 19 20Q19 20 19 20V11H21V20Q21 20.825 20.413 21.413Q19.825 22 19 22ZM11 18.5Q12.875 18.5 14.188 17.188Q15.5 15.875 15.5 14Q15.5 12.125 14.188 10.812Q12.875 9.5 11 9.5Q9.125 9.5 7.812 10.812Q6.5 12.125 6.5 14Q6.5 15.875 7.812 17.188Q9.125 18.5 11 18.5ZM11 16.5Q9.95 16.5 9.225 15.775Q8.5 15.05 8.5 14Q8.5 12.95 9.225 12.225Q9.95 11.5 11 11.5Q12.05 11.5 12.775 12.225Q13.5 12.95 13.5 14Q13.5 15.05 12.775 15.775Q12.05 16.5 11 16.5ZM11 14Q11 14 11 14Q11 14 11 14Q11 14 11 14Q11 14 11 14Q11 14 11 14Q11 14 11 14Z" />
+                    </svg></div>
+            </div>
+            <div class="color-buttons" id="color-buttons">
+                <!--colors here--> 
+                <div class="button" id="color-button">
+                    
+                </div>
+            </div>
         </div>
-            <div class="button">2</div>
-            <div class="button">3</div>
-            <div class="button">4</div>
-            <div class="button">5</div>
-        </div>
+
         <div class="canvas" id="canvas">
+            <!--cells here--> 
         </div>
     </div>
     <div class="footer">Footer</div>
