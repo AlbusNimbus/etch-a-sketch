@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono&display=swap');
+*{
+    margin: 0;
+    top: 0;
+    box-sizing: border-box;
+
+}
+:root {
+    --satin-sheen-gold: #b39c4dff;
+    --satin-sheen-gold-lighter: #bbab79;
+    --moss-green: #768948ff;
+    --fern-green: #607744ff;
+    --hunter-green: #34623fff;
+    --pine-tree: #1e2f23ff;
+  }
+body {
+ font-family: 'Press Start 2P',Roboto;
+ font-weight: 800;
+ background-color: var(--moss-green);
+}
+
+.header{
+    display: flex;
+    background: var(--pine-tree);
+    color: var(--satin-sheen-gold);
+    justify-content: center;
+    padding:25px;
+    font-size: 3rem;
+    text-shadow: 3px 3px 3px black;
+}
+.sketcher {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 10px;
+}
+
+.menu{
+    display: grid;
+    grid-template-columns: repeat(2,0fr);
+    grid-template-rows: repeat(2,0fr);
+    gap:10px;
+    width: 6rem;
+    padding-left: 10px;
+    padding-top: 10px;
+    background-color: var(--fern-green);
+    box-shadow: -3px 0 0 0 var(--pine-tree),
+    3px 0 0 0 var(--pine-tree),
+    0 -3px 0 0 var(--pine-tree),
+    0 3px 0 0 var(--pine-tree)
+}
+ul{
+    list-style-type: none;
+}
+.button{
+    display: flex;
+    box-shadow: -3px 0 0 0 var(--pine-tree),
+    3px 0 0 0 var(--pine-tree),
+    0 -3px 0 0 var(--pine-tree),
+    0 3px 0 0 var(--pine-tree);
+    background-color: var(--satin-sheen-gold);
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+.button:hover{
+    box-shadow: -3px 0 0 0 var(--satin-sheen-gold-lighter),
+    3px 0 0 0 var(--satin-sheen-gold-lighter),
+    0 -3px 0 0 var(--satin-sheen-gold-lighter),
+    0 3px 0 0 var(--satin-sheen-gold-lighter);
+}
+.button:active{
+    background-color: var(--satin-sheen-gold-lighter);
+}
+.canvas{
+    display: grid;
+    height: 500px;
+    width: 500px;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,1fr);
+    box-shadow: -3px 0 0 0 var(--pine-tree),
+    3px 0 0 0 var(--pine-tree),
+    0 -3px 0 0 var(--pine-tree),
+    0 3px 0 0 var(--pine-tree);
+
+}
+.cell{
+    border:1px solid black;
+    background: white;
+}
+.grid-item{
+    background-color: white;
+    border: 2px solid black;
+}
+.footer{
+display: flex;
+margin-top: 100px;
+justify-content: center;
+color: var(--satin-sheen-gold);
+text-shadow: 2px 2px  var(--pine-tree);
+
+}
