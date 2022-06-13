@@ -6,7 +6,8 @@ const colors = document.getElementById('color-buttons');
 const pencil = document.getElementById('draw-button');
 const eraser = document.getElementById('erase-button');
 const delet = document.getElementById('delete-button');
-
+const palette = document.getElementById('palette-button');
+const colorPalette = document.getElementById('color-palette')
 
 function createCells(size) {
     canvas.innerHTML = "";
@@ -19,47 +20,95 @@ function createCells(size) {
         canvas.append(cell)
     };
     const cells = document.querySelectorAll('.cell');
-    canvas.addEventListener('mousedown',()=>{
-        mouseDown = true;
-    });
-    canvas.addEventListener('mouseup',()=>{
-        mouseDown = false;
-    });
     cells.forEach((cell) => {
-        cell.addEventListener('mouseover', () => {
-            if(mouseDown){
-                cell.style.background = ink;
-            }
-        }
-        );
-    });
+        cell.addEventListener('mousedown', changeColor);
+        cell.addEventListener('mouseover', changeColor);
+    })
+};
+
+let mouseDown = false
+
+canvas.onmousedown = () => (mouseDown = true,console.log('down'))
+canvas.onmouseup = () => (mouseDown = false,console.log('up'))
+function changeColor(e){
+    if (e.type === 'mouseover' && !mouseDown) {
+        return
+    }else{
+        e.target.style.backgroundColor = ink;
+    }
     
 }
 
 function generateColors(){
     var color = document.querySelector('#color-button')
+    color.addEventListener('click', getColor);
     for (var i = 0; i < 7; i++) {
         var colorClone = color.cloneNode(true);
-        
-        colors.append(colorClone)
+        colorClone.style.backgroundColor = generateColor(i);
+        colorClone.id = 'color-button';
+        colorClone.addEventListener('click', getColor);
+        color.parentNode.insertBefore(colorClone, color.parentNode.children[1]);
     };
 }
 
+function generatePaletteColors(){
+    
+    for (var i = 0; i < 100; i++) {
+        var paletteColorBtn = document.createElement("div");
+        paletteColorBtn.style.backgroundColor = `hsl(${360*i/100},100%,50%)`;
+        paletteColorBtn.id = 'palette-color-button';
+        paletteColorBtn.addEventListener('click', pickColor);
+        colorPalette.append(paletteColorBtn);
+    };
+}
 
 pencil.addEventListener('click', paintMode);
 eraser.addEventListener('click', eraseMode);
 delet.addEventListener('click', del);
 
+function pickColor(e){
+    var colorBtn = document.createElement("div");
+    colorBtn.style.backgroundColor = e.target.style.backgroundColor;
+    colorBtn.id = 'color-button';
+    colorBtn.className = 'button';
+    colorBtn.addEventListener('click', getColor);
+    colors.insertBefore(colorBtn, colors.lastElementChild);
+    ink = colorBtn.style.backgroundColor
+    e.stopPropagation();
+    closePalette();
+}
+function getColor(e){
+    ink = e.target.style.backgroundColor
+    color = ink;
+}
+function generateColor(index){
+    return `hsl(${360*index/7},100%,50%)`
+}
 function del(){
     createCells(size);
 }
 
 function paintMode() {
-    ink = "black"
+    ink = color;
 }
 function eraseMode(){
     ink = "white"
 }
+
+
+//experimental
+palette.addEventListener('click', openPalette)
+
+function openPalette() {
+    console.log("palette button")
+    colorPalette.classList.add('active')
+  }
+
+  function closePalette() {
+    console.log("close")
+    colorPalette.classList.remove('active')
+  }
+
+generatePaletteColors()
 generateColors();
 createCells(size);
-console.log('yes');
