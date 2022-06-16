@@ -27,6 +27,9 @@ function createCells(size) {
 };
 
 let mouseDown = false
+
+canvas.onmousedown = () => (mouseDown = true,console.log('down'))
+canvas.onmouseup = () => (mouseDown = false,console.log('up'))
 function changeColor(e){
     if (e.type === 'mouseover' && !mouseDown) {
         return
